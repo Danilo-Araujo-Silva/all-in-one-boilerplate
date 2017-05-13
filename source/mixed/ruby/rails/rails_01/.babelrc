@@ -1,0 +1,9 @@
+{
+  "presets": ["env", "react"],
+  "plugins": [
+    "syntax-dynamic-import",
+    "transform-async-to-generator",
+    "transform-regenerator",
+    "transform-runtime"
+  ]
+}

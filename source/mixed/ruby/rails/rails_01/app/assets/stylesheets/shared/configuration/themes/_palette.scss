@@ -1,0 +1,1236 @@
+/// Workaround to create a local variable.
+$_local: (
+  black: #000000,
+  white: #ffffff,
+  mine-shaft: #303030,
+  alto: cfcfcf
+);
+
+$_local: map-merge(
+    $_local,
+    (
+      black-opacity-13: rgba(map-deep-get($_local, black), 0.13),
+      white-opacity-13: rgba(map-deep-get($_local, white), 0.13),
+      black-opacity-87: rgba(map-deep-get($_local, black), 0.87),
+      white-opacity-87: rgba(map-deep-get($_local, white), 0.87)
+    )
+);
+
+$scheme: (
+  colors: (
+    base: (
+      alto: (
+        main: (
+          normal: map-deep-get($_local, alto),
+          contrast: map-deep-get($_local, mine-shaft)
+        )
+      ),
+      black: (
+        main: (
+          normal: map-deep-get($_local, black),
+          contrast: map-deep-get($_local, white)
+        ),
+        opacity-13: (
+          normal: map-deep-get($_local, black-opacity-13),
+          contrast: map-deep-get($_local, black-opacity-87)
+        ),
+        opacity-87: (
+          normal: map-deep-get($_local, black-opacity-87),
+          contrast: map-deep-get($_local, black-opacity-13)
+        )
+      ),
+      mine-shaft: (
+        main: (
+          normal: map-deep-get($_local, mine-shaft),
+          contrast: map-deep-get($_local, alto)
+        )
+      ),
+      white: (
+        main: (
+          normal: map-deep-get($_local, white),
+          contrast: map-deep-get($_local, black)
+        ),
+        opacity-13: (
+          normal: map-deep-get($_local, white-opacity-13),
+          contrast: map-deep-get($_local, white-opacity-87)
+        ),
+        opacity-87: (
+          normal: map-deep-get($_local, white-opacity-87),
+          contrast: map-deep-get($_local, white-opacity-13)
+        )
+      )
+    ),
+    palette: (
+      red: (
+        50: (
+          normal: #ffebee,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        100: (
+          normal: #ffcdd2,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        200: (
+          normal: #ef9a9a,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        300: (
+          normal: #e57373,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        400: (
+          normal: #ef5350,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        500: (
+          normal: #f44336,
+          contrast: map-deep-get($_local, white),
+        ),
+        600: (
+          normal: #e53935,
+          contrast: map-deep-get($_local, white),
+        ),
+        700: (
+          normal: #d32f2f,
+          contrast: map-deep-get($_local, white),
+        ),
+        800: (
+          normal: #c62828,
+          contrast: map-deep-get($_local, white-opacity-87),
+        ),
+        900: (
+          normal: #b71c1c,
+          contrast: map-deep-get($_local, white-opacity-87),
+        ),
+        A100: (
+          normal: #ff8a80,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        A200: (
+          normal: #ff5252,
+          contrast: map-deep-get($_local, white),
+        ),
+        A400: (
+          normal: #ff1744,
+          contrast: map-deep-get($_local, white),
+        ),
+        A700: (
+          normal: #d50000,
+          contrast: map-deep-get($_local, white),
+        ),
+      ),
+      pink: (
+        50: (
+          normal: #fce4ec,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        100: (
+          normal: #f8bbd0,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        200: (
+          normal: #f48fb1,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        300: (
+          normal: #f06292,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        400: (
+          normal: #ec407a,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        500: (
+          normal: #e91e63,
+          contrast: map-deep-get($_local, white),
+        ),
+        600: (
+          normal: #d81b60,
+          contrast: map-deep-get($_local, white),
+        ),
+        700: (
+          normal: #c2185b,
+          contrast: map-deep-get($_local, white-opacity-87),
+        ),
+        800: (
+          normal: #ad1457,
+          contrast: map-deep-get($_local, white-opacity-87),
+        ),
+        900: (
+          normal: #880e4f,
+          contrast: map-deep-get($_local, white-opacity-87),
+        ),
+        A100: (
+          normal: #ff80ab,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        A200: (
+          normal: #ff4081,
+          contrast: map-deep-get($_local, white),
+        ),
+        A400: (
+          normal: #f50057,
+          contrast: map-deep-get($_local, white),
+        ),
+        A700: (
+          normal: #c51162,
+          contrast: map-deep-get($_local, white),
+        ),
+      ),
+      purple: (
+        50: (
+          normal: #f3e5f5,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        100: (
+          normal: #e1bee7,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        200: (
+          normal: #ce93d8,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        300: (
+          normal: #ba68c8,
+          contrast: map-deep-get($_local, white),
+        ),
+        400: (
+          normal: #ab47bc,
+          contrast: map-deep-get($_local, white),
+        ),
+        500: (
+          normal: #9c27b0,
+          contrast: map-deep-get($_local, white-opacity-87),
+        ),
+        600: (
+          normal: #8e24aa,
+          contrast: map-deep-get($_local, white-opacity-87),
+        ),
+        700: (
+          normal: #7b1fa2,
+          contrast: map-deep-get($_local, white-opacity-87),
+        ),
+        800: (
+          normal: #6a1b9a,
+          contrast: map-deep-get($_local, white-opacity-87),
+        ),
+        900: (
+          normal: #4a148c,
+          contrast: map-deep-get($_local, white-opacity-87),
+        ),
+        A100: (
+          normal: #ea80fc,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        A200: (
+          normal: #e040fb,
+          contrast: map-deep-get($_local, white),
+        ),
+        A400: (
+          normal: #d500f9,
+          contrast: map-deep-get($_local, white),
+        ),
+        A700: (
+          normal: #aa00ff,
+          contrast: map-deep-get($_local, white),
+        ),
+      ),
+      deep-purple: (
+        50: (
+          normal: #ede7f6,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        100: (
+          normal: #d1c4e9,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        200: (
+          normal: #b39ddb,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        300: (
+          normal: #9575cd,
+          contrast: map-deep-get($_local, white),
+        ),
+        400: (
+          normal: #7e57c2,
+          contrast: map-deep-get($_local, white),
+        ),
+        500: (
+          normal: #673ab7,
+          contrast: map-deep-get($_local, white-opacity-87),
+        ),
+        600: (
+          normal: #5e35b1,
+          contrast: map-deep-get($_local, white-opacity-87),
+        ),
+        700: (
+          normal: #512da8,
+          contrast: map-deep-get($_local, white-opacity-87),
+        ),
+        800: (
+          normal: #4527a0,
+          contrast: map-deep-get($_local, white-opacity-87),
+        ),
+        900: (
+          normal: #311b92,
+          contrast: map-deep-get($_local, white-opacity-87),
+        ),
+        A100: (
+          normal: #b388ff,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        A200: (
+          normal: #7c4dff,
+          contrast: map-deep-get($_local, white),
+        ),
+        A400: (
+          normal: #651fff,
+          contrast: map-deep-get($_local, white-opacity-87),
+        ),
+        A700: (
+          normal: #6200ea,
+          contrast: map-deep-get($_local, white-opacity-87),
+        ),
+      ),
+      indigo: (
+        50: (
+          normal: #e8eaf6,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        100: (
+          normal: #c5cae9,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        200: (
+          normal: #9fa8da,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        300: (
+          normal: #7986cb,
+          contrast: map-deep-get($_local, white),
+        ),
+        400: (
+          normal: #5c6bc0,
+          contrast: map-deep-get($_local, white),
+        ),
+        500: (
+          normal: #3f51b5,
+          contrast: map-deep-get($_local, white-opacity-87),
+        ),
+        600: (
+          normal: #3949ab,
+          contrast: map-deep-get($_local, white-opacity-87),
+        ),
+        700: (
+          normal: #303f9f,
+          contrast: map-deep-get($_local, white-opacity-87),
+        ),
+        800: (
+          normal: #283593,
+          contrast: map-deep-get($_local, white-opacity-87),
+        ),
+        900: (
+          normal: #1a237e,
+          contrast: map-deep-get($_local, white-opacity-87),
+        ),
+        A100: (
+          normal: #8c9eff,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        A200: (
+          normal: #536dfe,
+          contrast: map-deep-get($_local, white),
+        ),
+        A400: (
+          normal: #3d5afe,
+          contrast: map-deep-get($_local, white),
+        ),
+        A700: (
+          normal: #304ffe,
+          contrast: map-deep-get($_local, white-opacity-87),
+        ),
+      ),
+      blue: (
+        50: (
+          normal: #e3f2fd,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        100: (
+          normal: #bbdefb,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        200: (
+          normal: #90caf9,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        300: (
+          normal: #64b5f6,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        400: (
+          normal: #42a5f5,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        500: (
+          normal: #2196f3,
+          contrast: map-deep-get($_local, white),
+        ),
+        600: (
+          normal: #1e88e5,
+          contrast: map-deep-get($_local, white),
+        ),
+        700: (
+          normal: #1976d2,
+          contrast: map-deep-get($_local, white),
+        ),
+        800: (
+          normal: #1565c0,
+          contrast: map-deep-get($_local, white-opacity-87),
+        ),
+        900: (
+          normal: #0d47a1,
+          contrast: map-deep-get($_local, white-opacity-87),
+        ),
+        A100: (
+          normal: #82b1ff,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        A200: (
+          normal: #448aff,
+          contrast: map-deep-get($_local, white),
+        ),
+        A400: (
+          normal: #2979ff,
+          contrast: map-deep-get($_local, white),
+        ),
+        A700: (
+          normal: #2962ff,
+          contrast: map-deep-get($_local, white),
+        ),
+      ),
+      light-blue: (
+        50: (
+          normal: #e1f5fe,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        100: (
+          normal: #b3e5fc,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        200: (
+          normal: #81d4fa,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        300: (
+          normal: #4fc3f7,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        400: (
+          normal: #29b6f6,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        500: (
+          normal: #03a9f4,
+          contrast: map-deep-get($_local, white),
+        ),
+        600: (
+          normal: #039be5,
+          contrast: map-deep-get($_local, white),
+        ),
+        700: (
+          normal: #0288d1,
+          contrast: map-deep-get($_local, white),
+        ),
+        800: (
+          normal: #0277bd,
+          contrast: map-deep-get($_local, white),
+        ),
+        900: (
+          normal: #01579b,
+          contrast: map-deep-get($_local, white-opacity-87),
+        ),
+        A100: (
+          normal: #80d8ff,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        A200: (
+          normal: #40c4ff,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        A400: (
+          normal: #00b0ff,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        A700: (
+          normal: #0091ea,
+          contrast: map-deep-get($_local, white),
+        ),
+      ),
+      cyan: (
+        50: (
+          normal: #e0f7fa,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        100: (
+          normal: #b2ebf2,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        200: (
+          normal: #80deea,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        300: (
+          normal: #4dd0e1,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        400: (
+          normal: #26c6da,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        500: (
+          normal: #00bcd4,
+          contrast: map-deep-get($_local, white),
+        ),
+        600: (
+          normal: #00acc1,
+          contrast: map-deep-get($_local, white),
+        ),
+        700: (
+          normal: #0097a7,
+          contrast: map-deep-get($_local, white),
+        ),
+        800: (
+          normal: #00838f,
+          contrast: map-deep-get($_local, white),
+        ),
+        900: (
+          normal: #006064,
+          contrast: map-deep-get($_local, white-opacity-87),
+        ),
+        A100: (
+          normal: #84ffff,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        A200: (
+          normal: #18ffff,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        A400: (
+          normal: #00e5ff,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        A700: (
+          normal: #00b8d4,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+      ),
+      teal: (
+        50: (
+          normal: #e0f2f1,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        100: (
+          normal: #b2dfdb,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        200: (
+          normal: #80cbc4,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        300: (
+          normal: #4db6ac,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        400: (
+          normal: #26a69a,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        500: (
+          normal: #009688,
+          contrast: map-deep-get($_local, white),
+        ),
+        600: (
+          normal: #00897b,
+          contrast: map-deep-get($_local, white),
+        ),
+        700: (
+          normal: #00796b,
+          contrast: map-deep-get($_local, white),
+        ),
+        800: (
+          normal: #00695c,
+          contrast: map-deep-get($_local, white-opacity-87),
+        ),
+        900: (
+          normal: #004d40,
+          contrast: map-deep-get($_local, white-opacity-87),
+        ),
+        A100: (
+          normal: #a7ffeb,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        A200: (
+          normal: #64ffda,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        A400: (
+          normal: #1de9b6,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        A700: (
+          normal: #00bfa5,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+      ),
+      green: (
+        50: (
+          normal: #e8f5e9,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        100: (
+          normal: #c8e6c9,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        200: (
+          normal: #a5d6a7,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        300: (
+          normal: #81c784,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        400: (
+          normal: #66bb6a,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        500: (
+          normal: #4caf50,
+          contrast: map-deep-get($_local, white),
+        ),
+        600: (
+          normal: #43a047,
+          contrast: map-deep-get($_local, white),
+        ),
+        700: (
+          normal: #388e3c,
+          contrast: map-deep-get($_local, white),
+        ),
+        800: (
+          normal: #2e7d32,
+          contrast: map-deep-get($_local, white-opacity-87),
+        ),
+        900: (
+          normal: #1b5e20,
+          contrast: map-deep-get($_local, white-opacity-87),
+        ),
+        A100: (
+          normal: #b9f6ca,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        A200: (
+          normal: #69f0ae,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        A400: (
+          normal: #00e676,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        A700: (
+          normal: #00c853,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+      ),
+      light-green: (
+        50: (
+          normal: #f1f8e9,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        100: (
+          normal: #dcedc8,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        200: (
+          normal: #c5e1a5,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        300: (
+          normal: #aed581,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        400: (
+          normal: #9ccc65,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        500: (
+          normal: #8bc34a,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        600: (
+          normal: #7cb342,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        700: (
+          normal: #689f38,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        800: (
+          normal: #558b2f,
+          contrast: map-deep-get($_local, white),
+        ),
+        900: (
+          normal: #33691e,
+          contrast: map-deep-get($_local, white),
+        ),
+        A100: (
+          normal: #ccff90,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        A200: (
+          normal: #b2ff59,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        A400: (
+          normal: #76ff03,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        A700: (
+          normal: #64dd17,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+      ),
+      lime: (
+        50: (
+          normal: #f9fbe7,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        100: (
+          normal: #f0f4c3,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        200: (
+          normal: #e6ee9c,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        300: (
+          normal: #dce775,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        400: (
+          normal: #d4e157,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        500: (
+          normal: #cddc39,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        600: (
+          normal: #c0ca33,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        700: (
+          normal: #afb42b,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        800: (
+          normal: #9e9d24,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        900: (
+          normal: #827717,
+          contrast: map-deep-get($_local, white),
+        ),
+        A100: (
+          normal: #f4ff81,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        A200: (
+          normal: #eeff41,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        A400: (
+          normal: #c6ff00,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        A700: (
+          normal: #aeea00,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+      ),
+      yellow: (
+        50: (
+          normal: #fffde7,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        100: (
+          normal: #fff9c4,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        200: (
+          normal: #fff59d,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        300: (
+          normal: #fff176,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        400: (
+          normal: #ffee58,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        500: (
+          normal: #ffeb3b,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        600: (
+          normal: #fdd835,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        700: (
+          normal: #fbc02d,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        800: (
+          normal: #f9a825,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        900: (
+          normal: #f57f17,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        A100: (
+          normal: #ffff8d,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        A200: (
+          normal: #ffff00,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        A400: (
+          normal: #ffea00,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        A700: (
+          normal: #ffd600,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+      ),
+      amber: (
+        50: (
+          normal: #fff8e1,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        100: (
+          normal: #ffecb3,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        200: (
+          normal: #ffe082,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        300: (
+          normal: #ffd54f,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        400: (
+          normal: #ffca28,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        500: (
+          normal: #ffc107,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        600: (
+          normal: #ffb300,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        700: (
+          normal: #ffa000,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        800: (
+          normal: #ff8f00,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        900: (
+          normal: #ff6f00,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        A100: (
+          normal: #ffe57f,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        A200: (
+          normal: #ffd740,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        A400: (
+          normal: #ffc400,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        A700: (
+          normal: #ffab00,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+      ),
+      orange: (
+        50: (
+          normal: #fff3e0,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        100: (
+          normal: #ffe0b2,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        200: (
+          normal: #ffcc80,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        300: (
+          normal: #ffb74d,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        400: (
+          normal: #ffa726,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        500: (
+          normal: #ff9800,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        600: (
+          normal: #fb8c00,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        700: (
+          normal: #f57c00,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        800: (
+          normal: #ef6c00,
+          contrast: map-deep-get($_local, white),
+        ),
+        900: (
+          normal: #e65100,
+          contrast: map-deep-get($_local, white),
+        ),
+        A100: (
+          normal: #ffd180,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        A200: (
+          normal: #ffab40,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        A400: (
+          normal: #ff9100,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        A700: (
+          normal: #ff6d00,
+          contrast: map-deep-get($_local, black),
+        ),
+      ),
+      deep-orange: (
+        50: (
+          normal: #fbe9e7,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        100: (
+          normal: #ffccbc,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        200: (
+          normal: #ffab91,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        300: (
+          normal: #ff8a65,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        400: (
+          normal: #ff7043,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        500: (
+          normal: #ff5722,
+          contrast: map-deep-get($_local, white),
+        ),
+        600: (
+          normal: #f4511e,
+          contrast: map-deep-get($_local, white),
+        ),
+        700: (
+          normal: #e64a19,
+          contrast: map-deep-get($_local, white),
+        ),
+        800: (
+          normal: #d84315,
+          contrast: map-deep-get($_local, white),
+        ),
+        900: (
+          normal: #bf360c,
+          contrast: map-deep-get($_local, white),
+        ),
+        A100: (
+          normal: #ff9e80,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        A200: (
+          normal: #ff6e40,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        A400: (
+          normal: #ff3d00,
+          contrast: map-deep-get($_local, white),
+        ),
+        A700: (
+          normal: #dd2c00,
+          contrast: map-deep-get($_local, white),
+        ),
+      ),
+      brown: (
+        50: (
+          normal: #efebe9,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        100: (
+          normal: #d7ccc8,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        200: (
+          normal: #bcaaa4,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        300: (
+          normal: #a1887f,
+          contrast: map-deep-get($_local, white),
+        ),
+        400: (
+          normal: #8d6e63,
+          contrast: map-deep-get($_local, white),
+        ),
+        500: (
+          normal: #795548,
+          contrast: map-deep-get($_local, white-opacity-87),
+        ),
+        600: (
+          normal: #6d4c41,
+          contrast: map-deep-get($_local, white-opacity-87),
+        ),
+        700: (
+          normal: #5d4037,
+          contrast: map-deep-get($_local, white-opacity-87),
+        ),
+        800: (
+          normal: #4e342e,
+          contrast: map-deep-get($_local, white-opacity-87),
+        ),
+        900: (
+          normal: #3e2723,
+          contrast: map-deep-get($_local, white-opacity-87),
+        ),
+        A100: (
+          normal: #d7ccc8,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        A200: (
+          normal: #bcaaa4,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        A400: (
+          normal: #8d6e63,
+          contrast: map-deep-get($_local, white),
+        ),
+        A700: (
+          normal: #5d4037,
+          contrast: map-deep-get($_local, white-opacity-87),
+        ),
+      ),
+      grey: (
+        0: (
+          normal: #ffffff,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        50: (
+          normal: #fafafa,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        100: (
+          normal: #f5f5f5,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        200: (
+          normal: #eeeeee,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        300: (
+          normal: #e0e0e0,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        400: (
+          normal: #bdbdbd,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        500: (
+          normal: #9e9e9e,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        600: (
+          normal: #757575,
+          contrast: map-deep-get($_local, white-opacity-87),
+        ),
+        700: (
+          normal: #616161,
+          contrast: map-deep-get($_local, white-opacity-87),
+        ),
+        800: (
+          normal: #424242,
+          contrast: map-deep-get($_local, white-opacity-87),
+        ),
+        900: (
+          normal: #212121,
+          contrast: map-deep-get($_local, white-opacity-87),
+        ),
+        1000: (
+          normal: #000000,
+          contrast: map-deep-get($_local, white-opacity-87),
+        ),
+        A100: (
+          normal: #ffffff,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        A200: (
+          normal: #eeeeee,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        A400: (
+          normal: #bdbdbd,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        A700: (
+          normal: #616161,
+          contrast: map-deep-get($_local, white-opacity-87),
+        ),
+      ),
+      blue-grey: (
+        50: (
+          normal: #eceff1,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        100: (
+          normal: #cfd8dc,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        200: (
+          normal: #b0bec5,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        300: (
+          normal: #90a4ae,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        400: (
+          normal: #78909c,
+          contrast: map-deep-get($_local, white),
+        ),
+        500: (
+          normal: #607d8b,
+          contrast: map-deep-get($_local, white),
+        ),
+        600: (
+          normal: #546e7a,
+          contrast: map-deep-get($_local, white-opacity-87),
+        ),
+        700: (
+          normal: #455a64,
+          contrast: map-deep-get($_local, white-opacity-87),
+        ),
+        800: (
+          normal: #37474f,
+          contrast: map-deep-get($_local, white-opacity-87),
+        ),
+        900: (
+          normal: #263238,
+          contrast: map-deep-get($_local, white-opacity-87),
+        ),
+        A100: (
+          normal: #cfd8dc,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        A200: (
+          normal: #b0bec5,
+          contrast: map-deep-get($_local, black-opacity-87),
+        ),
+        A400: (
+          normal: #78909c,
+          contrast: map-deep-get($_local, white),
+        ),
+        A700: (
+          normal: #455a64,
+          contrast: map-deep-get($_local, white-opacity-87),
+        ),
+      ),
+    )
+  )
+);
+
+$scheme: map-merge(
+    $scheme,
+    (
+      theme: (
+        default-dark: (
+          background: (
+            status-bar: map-deep-get($scheme, colors, base, black, main, normal),
+            app-bar:    map-deep-get($scheme, colors, palette, grey, 900, normal),
+            background: map-deep-get($scheme, colors, base, mine-shaft, main, normal),
+            hover:      rgba(map-deep-get($scheme, colors, base, white, main, normal), 0.04),
+            card:       map-deep-get($scheme, colors, palette, grey, 800, normal),
+            dialog:     map-deep-get($scheme, colors, palette, grey, 800, normal),
+            disabled-button: rgba(map-deep-get($scheme, colors, base, white, main, normal), 0.12),
+            raised-button: map-deep-get($scheme, colors, palette, grey, 800, normal)
+          ),
+          foreground: (
+            base:            map-deep-get($scheme, colors, base, white, main, normal),
+            divider:         rgba(map-deep-get($scheme, colors, base, white, main, normal), 0.12),
+            dividers:        rgba(map-deep-get($scheme, colors, base, white, main, normal), 0.12),
+            disabled:        rgba(map-deep-get($scheme, colors, base, white, main, normal), 0.3),
+            disabled-button: rgba(map-deep-get($scheme, colors, base, white, main, normal), 0.3),
+            disabled-text:   rgba(map-deep-get($scheme, colors, base, white, main, normal), 0.3),
+            hint-text:       rgba(map-deep-get($scheme, colors, base, white, main, normal), 0.3),
+            secondary-text:  rgba(map-deep-get($scheme, colors, base, white, main, normal), 0.7),
+            icon:            map-deep-get($scheme, colors, base, white, main, normal),
+            icons:           map-deep-get($scheme, colors, base, white, main, normal),
+            text:            map-deep-get($scheme, colors, base, white, main, normal)
+          ),
+        ),
+        default-light: (
+          background: (
+            status-bar: map-deep-get($scheme, colors, palette, grey, 300, normal),
+            app-bar:    map-deep-get($scheme, colors, palette, grey, 100, normal),
+            background: map-deep-get($scheme, colors, palette, grey, 50, normal),
+            hover:      rgba(map-deep-get($scheme, colors, base, black, main, normal), 0.04),
+            card:       map-deep-get($scheme, colors, base, white, main, normal),
+            dialog:     map-deep-get($scheme, colors, base, white, main, normal),
+            disabled-button: rgba(map-deep-get($scheme, colors, base, black, main, normal), 0.12),
+            raised-button: map-deep-get($scheme, colors, base, white, main, normal)
+          ),
+          foreground: (
+            base:            map-deep-get($scheme, colors, base, black, main, normal),
+            divider:         rgba(map-deep-get($scheme, colors, base, black, main, normal), 0.12),
+            dividers:        rgba(map-deep-get($scheme, colors, base, black, main, normal), 0.12),
+            disabled:        rgba(map-deep-get($scheme, colors, base, black, main, normal), 0.38),
+            disabled-button: rgba(map-deep-get($scheme, colors, base, black, main, normal), 0.38),
+            disabled-text:   rgba(map-deep-get($scheme, colors, base, black, main, normal), 0.38),
+            hint-text:       rgba(map-deep-get($scheme, colors, base, black, main, normal), 0.38),
+            secondary-text:  rgba(map-deep-get($scheme, colors, base, black, main, normal), 0.54),
+            icon:            rgba(map-deep-get($scheme, colors, base, black, main, normal), 0.54),
+            icons:           rgba(map-deep-get($scheme, colors, base, black, main, normal), 0.54),
+            text:            rgba(map-deep-get($scheme, colors, base, black, main, normal), 0.87)
+          ),
+        )
+      )
+    )
+);
+
+$_local: null;

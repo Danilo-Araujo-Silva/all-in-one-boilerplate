@@ -1,0 +1,65 @@
+@include scheme-styles(base);
+@include scheme-styles(palette);
+
+body {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-size: map-deep-get($application, ui, default, body, font-size);
+  color: map-deep-get($scheme, colors, base, black, opacity-87, normal);
+  background-color: map-deep-get($scheme, colors, base, black, opacity-87, contrast);
+}
+
+.display-4 {
+  font-size: 8rem;
+  font-weight: map-deep-get($application, ui, frameworks, google-material-design, font-weight, light);
+}
+
+.display-3 {
+  font-size: 4rem;
+  font-weight: map-deep-get($application, ui, frameworks, google-material-design, font-weight, regular);
+}
+
+.display-2 {
+  font-size: 3.214rem;
+  font-weight: map-deep-get($application, ui, frameworks, google-material-design, font-weight, regular);
+}
+
+.display-1 {
+  font-size: 2.429rem;
+  font-weight: map-deep-get($application, ui, frameworks, google-material-design, font-weight, regular);
+}
+
+.headline {
+  font-size: 1.714rem;
+  font-weight: map-deep-get($application, ui, frameworks, google-material-design, font-weight, regular);
+}
+
+.title {
+  font-size: 1.429rem;
+  font-weight: map-deep-get($application, ui, frameworks, google-material-design, font-weight, medium);
+}
+
+.subheading {
+  font-size: 1.143rem;
+  font-weight: map-deep-get($application, ui, frameworks, google-material-design, font-weight, regular);
+}
+
+.body-2 {
+  font-size: 1rem;
+  font-weight: map-deep-get($application, ui, frameworks, google-material-design, font-weight, medium);
+}
+
+.body-1 {
+  font-size: 1rem;
+  font-weight: map-deep-get($application, ui, frameworks, google-material-design, font-weight, regular);
+}
+
+.caption {
+  font-size: 0.857rem;
+  font-weight: map-deep-get($application, ui, frameworks, google-material-design, font-weight, regular);
+}
+
+.button {
+  font-size: 1rem;
+  font-weight: map-deep-get($application, ui, frameworks, google-material-design, font-weight, medium);
+  text-transform: uppercase;
+}

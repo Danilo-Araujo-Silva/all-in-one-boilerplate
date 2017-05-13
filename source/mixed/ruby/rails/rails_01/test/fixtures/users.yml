@@ -1,0 +1,18 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+root:
+  id: 1,
+  username: 'root'
+  name: 'Root'
+  email: 'root@127.0.0.1'
+  encrypted_password: '$2a$04$hqeScK3lmJbqb4vKTiGkhOcIpfHug7pIHhvjLoyvlJrGjIg/TYJ2e'
+  created_by_id: 1
+  updated_by_id: 1
+
+one:
+  username: 'one'
+  name: 'User One'
+  email: 'one@example.com'
+  encrypted_password: '$2a$04$hqeScK3lmJbqb4vKTiGkhOcIpfHug7pIHhvjLoyvlJrGjIg/TYJ2e'
+  created_by_id: 1
+  updated_by_id: 1

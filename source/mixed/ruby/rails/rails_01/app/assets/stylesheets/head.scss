@@ -1,0 +1,19 @@
+// functions
+@import 'shared/configuration/functions/map_deep_get';
+@import 'shared/configuration/functions/map_deep_set';
+
+// mixins
+@import 'shared/configuration/mixins/google_material_design';
+
+// themes and palette
+@import 'shared/configuration/themes/palette';
+@import 'shared/configuration/themes/themes';
+@import 'shared/configuration/themes/theme';
+
+// variables
+@import 'shared/configuration/variables/application';
+
+// dependencies
+@import 'shared/dependencies/ui/setup/sanitize';
+
+@import 'shared/main';

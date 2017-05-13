@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+root:
+  id: 1
+  parent_id: nil
+  title: 'root'
+  description: 'Root group.'
+  created_by_id: 1
+  updated_by_id: 1
+
+one:
+  parent_id: 1
+  title: 'test 1'
+  description: 'Test 1 group.'
+  created_by_id: 1
+  updated_by_id: 1
+

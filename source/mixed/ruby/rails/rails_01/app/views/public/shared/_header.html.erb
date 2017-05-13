@@ -1,0 +1,49 @@
+<%= content_for :body_header_attributes do %>
+  class="ui left sidebar borderless inverted vertical menu"
+<% end %>
+
+<%= content_for :body_header_before do %>
+<% end %>
+
+<%= content_for :body_header_after do %>
+  <div class="item">
+    <i class="large icons">
+      <i class="material-icons">menu</i>
+    </i>
+    <%= link_to $application_name, root_path %>
+  </div>
+  <div class="item">
+    <div class="header">
+      <strong><%= current_user.email if current_user %></strong>
+    </div>
+    <div class="menu">
+      <% if user_signed_in? %>
+          <%= link_to "Sign out", destroy_user_session_path, method: :delete, :class => 'item'  %>
+          <%= link_to 'Settings', edit_user_registration_path, :class => 'item' %>
+      <% else %>
+          <%= link_to "Create an account", new_user_registration_path, :class => 'item'  %>
+          <%= link_to "Sign in", new_user_session_path, :class => 'item'  %>
+      <% end %>
+    </div>
+  </div>
+  <%= link_to 'About', about_path, :class => 'item' %>
+  <%= link_to 'Contact', contact_path, :class => 'item' %>
+  <div class="item">
+    <div class="header">Help</div>
+    <div class="menu">
+      <%= link_to 'FAQ', frequently_asked_questions_path, :class => 'item' %>
+      <%= link_to 'Privacy Policy', privacy_policy_path, :class => 'item' %>
+      <%= link_to 'Terms of Service', terms_of_service_path, :class => 'item' %>
+      <%= link_to 'Careers', careers_path, :class => 'item' %>
+      <%= link_to 'Help', help_path, :class => 'item' %>
+    </div>
+  </div>
+
+  <script>
+    $('.ui.sidebar')
+        .sidebar('toggle')
+    ;
+  </script>
+<% end %>
+
+<%= render 'shared/header' %>

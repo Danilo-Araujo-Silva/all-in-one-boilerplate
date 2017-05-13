@@ -1,0 +1,10 @@
+<nav <%= yield(:body_nav_attributes) %> >
+  <% if content_for?(:body_nav_before) %>
+    <%= yield(:body_nav_before) %>
+  <% else %>
+  <% end %>
+  <% if content_for?(:body_nav_after) %>
+    <%= yield(:body_nav_after) %>
+  <% else %>
+  <% end %>
+</nav>

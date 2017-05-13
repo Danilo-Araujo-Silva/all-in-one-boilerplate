@@ -1,0 +1,16 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+root:
+  id: 1
+  user_id: 1
+  group_id: 1
+  grant: 'all'
+  created_by_id: 1
+  updated_by_id: 1
+
+one:
+  user_id: 2
+  group_id: 2
+  grant: ''
+  created_by_id: 1
+  updated_by_id: 1

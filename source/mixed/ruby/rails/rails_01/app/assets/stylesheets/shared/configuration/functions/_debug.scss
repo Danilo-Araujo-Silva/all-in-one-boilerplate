@@ -1,0 +1,19 @@
+//  Example of usage: http://codepen.io/GarouDan/pen/YZdXYB?editors=0110
+//
+//  $debug: debug('Test');
+//
+//  body:before {
+//    color: #C93900;
+//    font-family: 'Andale Mono',monospace;
+//    content: '#{$debug}';
+//    display: block;
+//    white-space: pre;
+//  }
+$debug: '';
+@function debug($d: '') {
+  $debug: $debug + '» #{inspect($d)} \A' !global;
+  @return $debug;
+}
+@mixin debug($d) {
+  $debug: debug($d);
+}

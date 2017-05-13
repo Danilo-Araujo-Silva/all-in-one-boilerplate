@@ -1,0 +1,2 @@
+module WebService::WebServiceHelper
+end

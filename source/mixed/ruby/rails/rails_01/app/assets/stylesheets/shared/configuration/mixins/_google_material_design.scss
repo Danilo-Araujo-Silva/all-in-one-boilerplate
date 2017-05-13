@@ -1,0 +1,84 @@
+@function scheme-meta-base-colors() {
+  $colors: ();
+
+  @each $color in map-deep-get($scheme, colors, base) {
+    $color-name: nth($color, 1);
+    $colors: append($colors, $color-name);
+  }
+
+  @return $colors;
+}
+
+@function scheme-meta-palette-colors() {
+  $colors: ();
+
+  @each $color in map-deep-get($scheme, colors, palette) {
+    $color-name: nth($color, 1);
+    $colors: append($colors, $color-name);
+  }
+
+  @return $colors;
+}
+
+@function scheme-base-color($name, $scale, $type: 'normal') {
+  @return map-deep-get($scheme, colors, base, $name, $scale, $type);
+}
+
+@function scheme-palette-color($name, $scale, $type: 'normal') {
+  @return map-deep-get($scheme, colors, palette, $name, $scale, $type);
+}
+
+@mixin scheme-styles($color-type) {
+  @each $color in map-deep-get($scheme, colors, $color-type) {
+    $color-name: nth($color, 1);
+    @each $scale in nth($color, 2) {
+      $scale-name: nth($scale, 1);
+      @each $type in nth($scale, 2) {
+        $type-name: nth($type, 1);
+        @each $value in nth($type, 2) {
+          $selector: $color-name;
+          @if ($scale-name != 'main') {
+            $selector: $selector + '-' + $scale-name;
+          }
+          @if ($type-name != 'normal') {
+            $selector: $selector + '-' + $type-name;
+          }
+
+          $inverted-type-name: 'contrast';
+          @if ($type == 'contrast') {
+            $inverted-type-name: 'normal';
+          }
+          $inverted-value: map-deep-get($scheme, colors, $color-type, $color-name, $scale-name, $inverted-type-name);
+
+          .md-color-#{$selector} {
+            color: $value;
+          }
+
+          .md-background-#{$selector} {
+            background-color: $value;
+          }
+
+          .md-#{$selector} {
+            color: $value;
+            background-color: $inverted-value;
+          }
+
+          .md-inverted-#{$selector} {
+            color: $inverted-value;
+            background-color: $value;
+          }
+        }
+      }
+    }
+  }
+}
+
+@function scheme-theme($name, $ground-type: null, $property: null) {
+  @if ($ground-type == null and $property == null) {
+    @return map-deep-get($scheme, theme, $name);
+  } @else if ($ground-type != null and $property == null) {
+    @return map-deep-get($scheme, theme, $name, $ground-type);
+  } @else {
+    @return map-deep-get($scheme, theme, $name, $ground-type, $property);
+  }
+}
