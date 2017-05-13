@@ -1,0 +1,37 @@
+buildscript {
+  repositories {
+    mavenCentral()
+  }
+  dependencies {
+    classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.3.RELEASE")
+  }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+
+jar {
+  baseName = 'spring_boot_01'
+  version =  '0.1.0'
+}
+
+repositories {
+  mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+  compile("org.springframework.boot:spring-boot-starter-web")
+  compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+  compile 'mysql:mysql-connector-java'
+  compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.5'
+  compile group: 'org.apache.commons', name: 'commons-collections4', version: '4.1'
+  compile group: 'uk.com.robust-it', name: 'cloning', version: '1.7.4'
+  compileOnly('org.projectlombok:lombok')
+  testCompile('org.springframework.boot:spring-boot-starter-test')
+  testCompile('com.jayway.jsonpath:json-path')
+}
