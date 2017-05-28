@@ -1,14 +1,13 @@
-import {createStore, applyMiddleware} from 'redux'
-
-import middlewares from './middlewares'
-import rootReducer from './reducers'
+import storeFactory from './store.factory'
 import initialState from './initial-state'
+import subscribers from './subscribers'
 
-const storeFactory = (state = initialState) => {
-	return applyMiddleware(
-		middlewares.mainMiddleware,
-		middlewares.thunkMiddleware
-	)(createStore)(rootReducer, state)
+const store = storeFactory(initialState)
+
+for (let value of Object.values(subscribers)) {
+	store.subscribe(value(store))
 }
 
-export default storeFactory
+window.store = store
+
+export default store
