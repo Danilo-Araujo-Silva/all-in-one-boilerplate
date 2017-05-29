@@ -1,39 +1,28 @@
+import statuses from 'model/state/statuses'
+
 const initialState = {
+	notifications: {
+		successes: [],
+		informations: [],
+		warnings: [],
+		errors: [],
+		tasksRunning: {
+			visible: 0,
+			invisible: 0
+		}
+	},
 	user: {
-		target: null,
-		get: {
-			running: false,
+		item: {
+			status: statuses.idle,
+			action: null,
+			payload: null
 		},
-		insert: {
-			running: false,
+		list: {
+			status: statuses.idle,
+			action: null,
+			payload: null
 		},
-		patch: {
-			running: false,
-		},
-		update: {
-			running: false,
-		},
-		delete: {
-			running: false,
-		},
-	},users: {
-		target: null,
-		get: {
-			running: false,
-		},
-		insert: {
-			running: false,
-		},
-		patch: {
-			running: false,
-		},
-		update: {
-			running: false,
-		},
-		delete: {
-			running: false,
-		},
-	}
+	},
 }
 
 export default initialState

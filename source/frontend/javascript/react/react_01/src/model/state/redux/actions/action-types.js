@@ -1,4 +1,20 @@
 const actionTypes = {
+	notification: {
+		success: {
+			get, getAll, insert, 
+			sanitize, sanitizeAll, validate, validateAll
+			set, setAll, get, getAll, findFirst, findAll, filter, insert, insertAll, patch, patchAll, update, updateAll, remove, removeAll, delete, deleteAll
+		},
+		information: {
+			
+		},
+		warning: {
+			
+		},
+		error: {
+			
+		}
+	},
 	user: {
 		get: {
 			run: 'user.get.run',

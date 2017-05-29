@@ -1,5 +1,6 @@
 import {combineReducers} from 'redux'
 
+import statuses from 'model/state/statuses'
 import actionTypes from 'model/state/redux/actions/action-types'
 
 const userActionTypes = actionTypes.user
@@ -9,12 +10,12 @@ export const getUser = (state = false, action) => {
 	switch (action.type) {
 		case userActionTypes.get.run:
 			return {
-				running: true,
+				status: statuses.running,
 				payload: action.payload
 			}
 		case userActionTypes.get.cancel:
 			return {
-				running: false,
+				status: statuses.idle,
 				payload: null
 			}
 		default:
@@ -35,12 +36,12 @@ export const searchUser = (state = false, action) => {
 	switch (action.type) {
 		case userActionTypes.search.run:
 			return {
-				running: true,
+				status: statuses.running,
 				payload: action.payload
 			}
 		case userActionTypes.search.cancel:
 			return {
-				running: false,
+				status: statuses.idle,
 				payload: action.payload
 			}
 		default:
@@ -52,12 +53,12 @@ export const insertUser = (state = false, action) => {
 	switch (action.type) {
 		case userActionTypes.insert.run:
 			return {
-				running: true,
+				status: statuses.running,
 				payload: action.payload
 			}
 		case userActionTypes.insert.cancel:
 			return {
-				running: false,
+				status: statuses.idle,
 				payload: action.payload
 			}
 		default:
@@ -69,12 +70,12 @@ export const patchUser = (state = false, action) => {
 	switch (action.type) {
 		case userActionTypes.patch.run:
 			return {
-				running: true,
+				status: statuses.running,
 				payload: action.payload
 			}
 		case userActionTypes.patch.cancel:
 			return {
-				running: false,
+				status: statuses.idle,
 				payload: action.payload
 			}
 		default:
@@ -86,12 +87,12 @@ export const updateUser = (state = false, action) => {
 	switch (action.type) {
 		case userActionTypes.update.run:
 			return {
-				running: true,
+				status: statuses.running,
 				payload: action.payload
 			}
 		case userActionTypes.update.cancel:
 			return {
-				running: false,
+				status: statuses.idle,
 				payload: action.payload
 			}
 		default:
@@ -103,7 +104,7 @@ export const deleteUser = (state = false, action) => {
 	switch (action.type) {
 		case userActionTypes.delete.run:
 			return {
-				running: true,
+				status: statuses.running,
 				payload: action.payload
 			}
 		case userActionTypes.delete.cancel:
