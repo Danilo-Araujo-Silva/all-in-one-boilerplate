@@ -1,4 +1,4 @@
-import './actions/action-types'
+import './actions/bounds'
 
 //import actionsBounds from './actions/bounds'
 //

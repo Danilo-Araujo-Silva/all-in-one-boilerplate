@@ -1,9 +1,7 @@
-import {combineReducers} from 'redux'
+//import {combineReducers} from 'redux'
 
-import usersReducer from './users.reducer'
-
-const rootReducer = combineReducers({
-	...usersReducer
-})
+export const rootReducer = (state = {}, {type, payload}) => {
+	return state
+}
 
 export default rootReducer
