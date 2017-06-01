@@ -10,7 +10,17 @@ if (!global.oraculum) {
 				instance = this
 			}
 			
+			this.database = {}
+			
 			return instance
+		}
+		
+		get = (key) => {
+			return this.database[key]
+		}
+		
+		set = (key, value) => {
+			this.database[key] = value
 		}
 	}
 	

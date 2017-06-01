@@ -1,73 +1,49 @@
-const actionTypes = {
-	notification: {
-		success: {
-			get, getAll, insert, 
-			sanitize, sanitizeAll, validate, validateAll
-			set, setAll, get, getAll, findFirst, findAll, filter, insert, insertAll, patch, patchAll, update, updateAll, remove, removeAll, delete, deleteAll
-		},
-		information: {
-			
-		},
-		warning: {
-			
-		},
-		error: {
-			
-		}
-	},
-	user: {
-		get: {
-			run: 'user.get.run',
-			cancel: 'user.get.cancel'
-		},
-		set: 'user.set',
-		search: {
-			run: 'user.search.run',
-			cancel: 'user.search.cancel'
-		},
-		insert: {
-			run: 'user.insert.run',
-			cancel: 'user.insert.cancel'
-		},
-		patch: {
-			run: 'user.patch.run',
-			cancel: 'user.patch.cancel'
-		},
-		update: {
-			run: 'user.update.run',
-			cancel: 'user.update.cancel'
-		},
-		delete: {
-			run: 'user.delete.run',
-			cancel: 'user.delete.cancel'
-		},
-	},users: {
-		get: {
-			run: 'users.get.run',
-			cancel: 'users.get.cancel'
-		},
-		set: 'users.set',
-		search: {
-			run: 'users.search.run',
-			cancel: 'users.search.cancel'
-		},
-		insert: {
-			run: 'users.insert.run',
-			cancel: 'users.insert.cancel'
-		},
-		patch: {
-			run: 'users.patch.run',
-			cancel: 'users.patch.cancel'
-		},
-		update: {
-			run: 'users.update.run',
-			cancel: 'users.update.cancel'
-		},
-		delete: {
-			run: 'users.delete.run',
-			cancel: 'users.delete.cancel'
-		},
-	}
+import {Map} from 'immutable'
+
+const separator = '.'
+
+let actions = new Map().asMutable()
+let apiSubActions = new Map().asMutable()
+
+const pushAction = (action) => {
+	actions.setIn(action.split(separator), action)
 }
 
-export default actionTypes
+const pushApiSubAction = (subAction) => {
+	apiSubActions.set(subAction, subAction)
+}
+
+const pushApiAction = (mainAction) => {
+	apiSubActions.forEach((apiSubAction) => {
+		pushAction(`${mainAction}${separator}${apiSubAction}`)
+	})
+}
+
+pushApiSubAction("sanitize")
+pushApiSubAction("sanitizeAll")
+pushApiSubAction("validate")
+pushApiSubAction("validateAll")
+pushApiSubAction("get")
+pushApiSubAction("getAll")
+pushApiSubAction("insert")
+pushApiSubAction("insertAll")
+pushApiSubAction("update")
+pushApiSubAction("updateAll")
+pushApiSubAction("patch")
+pushApiSubAction("patchAll")
+pushApiSubAction("remove")
+pushApiSubAction("removeAll")
+pushApiSubAction("delete")
+pushApiSubAction("deleteAll")
+
+
+pushApiAction("notification.success")
+pushApiAction("notification.information")
+pushApiAction("notification.warning")
+pushApiAction("notification.error")
+
+pushApiAction("model.user")
+
+const immutableActions = actions.asImmutable()
+
+export default immutableActions

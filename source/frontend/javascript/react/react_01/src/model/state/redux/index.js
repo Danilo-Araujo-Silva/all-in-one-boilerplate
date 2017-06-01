@@ -1,3 +1,5 @@
-import actionsBounds from './actions/bounds'
+import './actions/action-types'
 
-actionsBounds.getUser(1)
+//import actionsBounds from './actions/bounds'
+//
+//actionsBounds.getUser(1)
