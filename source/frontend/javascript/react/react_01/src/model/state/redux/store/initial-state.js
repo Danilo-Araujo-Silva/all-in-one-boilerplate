@@ -1,4 +1,7 @@
-const initialState = {
-}
+import {Map} from 'immutable'
 
-export default initialState
+const initialState = new Map().asMutable()
+
+const immutableInitialState = initialState.asImmutable()
+
+export default immutableInitialState

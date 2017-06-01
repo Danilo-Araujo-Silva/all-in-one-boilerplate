@@ -1,5 +1,13 @@
+import {isCollection} from 'immutable'
+
 const mainSubscriber = (store) => () => {
-	console.log(store ? store.getState() : null)
+	if (
+		store
+		&& store.getState()
+		&& isCollection(store.getState())
+	) {
+		console.log(store.getState().toJS())
+	}
 }
 
 export default mainSubscriber

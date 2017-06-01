@@ -29,4 +29,8 @@ traverseActionTypes(actionTypes)
 
 const immutableActionBounds = actionBounds.asImmutable()
 
+window.bounds = immutableActionBounds
+
+console.log(immutableActionBounds.toJS())
+
 export default immutableActionBounds

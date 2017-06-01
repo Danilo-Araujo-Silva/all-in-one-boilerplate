@@ -56,6 +56,4 @@ pushApiAction("model.user")
 
 const immutableActions = actions.asImmutable()
 
-console.log(immutableActions.toJS())
-
 export default immutableActions
