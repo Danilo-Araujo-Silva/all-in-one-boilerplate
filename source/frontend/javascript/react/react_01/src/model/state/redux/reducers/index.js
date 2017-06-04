@@ -1,30 +1,34 @@
-//import {combineReducers} from 'redux'
-import {Map, List} from 'immutable'
+import app from 'model/storage/app'
 
-import actionTypes from 'model/state/redux/actions/action-types'
+if (typeof app.getIn('redux.reducers.root'.split('.')) === 'undefined') {
+	const Map = require('immutable').Map
 
-const separator = '.'
+	const actionTypes = app.getIn('redux.actions.types'.split('.'))
 
-export const rootReducer = (currentState = new Map(), {type, payload}) => {
-	switch (type) {
-		case actionTypes.getIn('notification.success.insert.finishWithoutError'.split(separator)):
-			const splited = 'notification.success'.split(separator)
-			let next = currentState.asMutable()
-			
-			let array = currentState.getIn(splited)
-			if (!array) {
-				array = new List()
-			}
-			array = array.asMutable()
-		
-			array.push(payload)
-			
-			next.setIn(splited, array.asImmutable())
-			
-			return next.asImmutable()
-		default:
+	const reducers = new Map().asMutable()
+	reducers.mergeDeep(require('./notifications').default)
+
+	const rootReducer = (currentState = new Map(), {type, payload}) => {
+		const actionType = actionTypes.getIn(type.split('.'))
+
+		if (!actionType) {
 			return currentState
-	}	
+		}
+
+		const reducer = reducers.getIn(actionType.split('.'))
+
+		if (!reducer) {
+			return currentState
+		}
+
+		return reducer(currentState, {type, payload})
+	}
+
+	reducers.set('root', rootReducer)
+
+	app.setIn('redux.reducers.root'.split('.'), rootReducer)
+	app.setIn('redux.reducers.all'.split('.'), reducers.asImmutable())
 }
 
-export default rootReducer
+export default app.getIn('redux.reducers.root'.split('.'))
+

@@ -1,32 +1,35 @@
-import {isCollection, Map} from 'immutable'
+import app from 'model/storage/app'
 
-const separator = '.'
+if (typeof app.getIn('redux.actions.bounds'.split('.')) === 'undefined') {
+	const Map = require('immutable').Map
+	const isCollection = require('immutable').isCollection
 
-const actionTypes = window.store.getIn('redux.action.types'.split(separator))
-const actionCreators = window.store.getIn('redux.action.creators'.split(separator))
-const store = window.store.getIn('redux.store'.split(separator))
+	const actionTypes = app.getIn('redux.actions.types'.split('.'))
+	const actionCreators = app.getIn('redux.actions.creators'.split('.'))
+	const store = app.getIn('redux.store'.split('.'))
 
-let actionBounds = new Map().asMutable()
+	let actionBounds = new Map().asMutable()
 
-const pushActionBound = (actionType) => {
-	const splited = actionType.split(separator)
-	actionBounds.setIn(splited, (payload) => {
-		store.dispatch(actionCreators.getIn(splited)(payload))
-	})
+	const pushActionBound = (actionType) => {
+		const splited = actionType.split('.')
+		actionBounds.setIn(splited, (payload) => {
+			store.dispatch(actionCreators.getIn(splited)(payload))
+		})
+	}
+
+	const traverseActionTypes = (collection) => {
+		collection.forEach((v, k) => {
+			if (isCollection(v)) {
+				traverseActionTypes(v)
+			} else {
+				pushActionBound(v)
+			}
+		})
+	}
+
+	traverseActionTypes(actionTypes)
+
+	app.setIn('redux.actions.bounds'.split('.'), actionBounds.asImmutable())
 }
 
-const traverseActionTypes = (collection) => {
-	collection.forEach((v, k) => {
-		if (isCollection(v)) {
-			traverseActionTypes(v)
-		} else {
-			pushActionBound(v)
-		}
-	})
-}
-
-traverseActionTypes(actionTypes)
-
-const immutableActionBounds = actionBounds.asImmutable()
-
-export default immutableActionBounds
+export default app.getIn('redux.actions.bounds'.split('.'))
