@@ -2,58 +2,58 @@ import {Map} from 'immutable'
 
 const separator = '.'
 
-let actions = new Map().asMutable()
-let apiSubActions = new Map().asMutable()
-let apiSubActionStatuses = new Map().asMutable()
+let actionTypes = new Map().asMutable()
+let apiSubActionTypes = new Map().asMutable()
+let apiSubActionTypeStatuses = new Map().asMutable()
 
-const pushAction = (action) => {
-	actions.setIn(action.split(separator), action)
+const pushActionType = (actionType) => {
+	actionTypes.setIn(actionType.split(separator), actionType)
 }
 
-const pushApiSubAction = (subAction) => {
-	apiSubActions.set(subAction, subAction)
+const pushApiSubActionType = (subActionType) => {
+	apiSubActionTypes.set(subActionType, subActionType)
 }
 
-const pushApiSubActionStatus = (status) => {
-	apiSubActionStatuses.set(status, status)
+const pushApiSubActionTypeStatus = (status) => {
+	apiSubActionTypeStatuses.set(status, status)
 }
 
-const pushApiAction = (mainAction) => {
-	apiSubActions.forEach((apiSubAction) => {
-		apiSubActionStatuses.forEach((apiSubActionStatus) => {
-			pushAction(`${mainAction}${separator}${apiSubAction}${separator}${apiSubActionStatus}`)
+const pushApiActionType = (mainActionType) => {
+	apiSubActionTypes.forEach((apiSubActionType) => {
+		apiSubActionTypeStatuses.forEach((apiSubActionTypeStatus) => {
+			pushActionType(`${mainActionType}${separator}${apiSubActionType}${separator}${apiSubActionTypeStatus}`)
 		})
 	})
 }
 
-pushApiSubActionStatus("start")
-pushApiSubActionStatus("finishWithoutError")
-pushApiSubActionStatus("finishWithError")
+pushApiSubActionTypeStatus("start")
+pushApiSubActionTypeStatus("finishWithoutError")
+pushApiSubActionTypeStatus("finishWithError")
 
-pushApiSubAction("sanitize")
-pushApiSubAction("sanitizeAll")
-pushApiSubAction("validate")
-pushApiSubAction("validateAll")
-pushApiSubAction("get")
-pushApiSubAction("getAll")
-pushApiSubAction("insert")
-pushApiSubAction("insertAll")
-pushApiSubAction("update")
-pushApiSubAction("updateAll")
-pushApiSubAction("patch")
-pushApiSubAction("patchAll")
-pushApiSubAction("remove")
-pushApiSubAction("removeAll")
-pushApiSubAction("delete")
-pushApiSubAction("deleteAll")
+pushApiSubActionType("sanitize")
+pushApiSubActionType("sanitizeAll")
+pushApiSubActionType("validate")
+pushApiSubActionType("validateAll")
+pushApiSubActionType("get")
+pushApiSubActionType("getAll")
+pushApiSubActionType("insert")
+pushApiSubActionType("insertAll")
+pushApiSubActionType("update")
+pushApiSubActionType("updateAll")
+pushApiSubActionType("patch")
+pushApiSubActionType("patchAll")
+pushApiSubActionType("remove")
+pushApiSubActionType("removeAll")
+pushApiSubActionType("delete")
+pushApiSubActionType("deleteAll")
 
-pushApiAction("notification.success")
-pushApiAction("notification.information")
-pushApiAction("notification.warning")
-pushApiAction("notification.error")
+pushApiActionType("notification.success")
+pushApiActionType("notification.information")
+pushApiActionType("notification.warning")
+pushApiActionType("notification.error")
 
-pushApiAction("model.user")
+pushApiActionType("model.user")
 
-const immutableActions = actions.asImmutable()
+const immutableActionTypes = actionTypes.asImmutable()
 
-export default immutableActions
+export default immutableActionTypes

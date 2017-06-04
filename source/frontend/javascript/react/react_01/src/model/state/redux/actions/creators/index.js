@@ -1,8 +1,8 @@
 import {isCollection, Map} from 'immutable'
 
-import actionTypes from 'model/state/redux/actions/action-types'
-
 const separator = '.'
+
+const actionTypes = window.store.getIn('redux.action.types'.split(separator))
 
 let actionCreators = new Map().asMutable()
 
