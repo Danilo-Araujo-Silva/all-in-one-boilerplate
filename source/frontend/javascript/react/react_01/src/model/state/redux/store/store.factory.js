@@ -1,7 +1,7 @@
 import {createStore, applyMiddleware} from 'redux'
 
 import middlewares from './middlewares'
-import rootReducer from './../reducers'
+import rootReducer from './../reducers/root.reducer'
 import initialState from './initial-state'
 
 const storeFactory = (state = initialState) => {

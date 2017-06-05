@@ -1,35 +1,14 @@
+import {Map} from 'immutable'
+
+import {get, set} from 'model/helper/immutablejs-map'
 import app from 'model/storage/app'
 
-if (typeof app.getIn('redux.actions.creators'.split('.')) === 'undefined') {
-	const Map = require('immutable').Map
-	const isCollection = require('immutable').isCollection
+let actionCreators = get(app, 'redux.actions.creators')
 
-	const actionTypes = app.getIn('redux.actions.types'.split('.'))
+if (typeof actionCreators === 'undefined') {
+	actionCreators = new Map().asMutable()
 
-	let actionCreators = new Map().asMutable()
-
-	const pushActionCreator = (actionType) => {
-		actionCreators.setIn(actionType.split('.'), (payload) =>
-			({
-				type: actionType,
-				payload
-			})
-		)
-	}
-
-	const traverseActionTypes = (collection) => {
-		collection.forEach((v, k) => {
-			if (isCollection(v)) {
-				traverseActionTypes(v)
-			} else {
-				pushActionCreator(v)
-			}
-		})
-	}
-
-	traverseActionTypes(actionTypes)
-
-	app.setIn('redux.actions.creators'.split('.'), actionCreators.asImmutable())
+	set(app, 'redux.actions.creators', actionCreators)
 }
 
-export default app.getIn('redux.actions.creators'.split('.'))
+export default actionCreators

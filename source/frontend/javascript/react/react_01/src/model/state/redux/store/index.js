@@ -1,3 +1,4 @@
+import {get} from 'model/helper/immutablejs-map'
 import app from 'model/storage/app'
 
 if (typeof app.getIn('redux.store'.split('.')) === 'undefined') {
@@ -12,6 +13,10 @@ if (typeof app.getIn('redux.store'.split('.')) === 'undefined') {
 	}
 
 	app.setIn('redux.store'.split('.'), store)
+}
+
+export function dispatch (actionType, payload) {
+	return get(get(app, 'redux.actions.bounds'), actionType)(payload)
 }
 
 export default app.getIn('redux.store'.split('.'))
