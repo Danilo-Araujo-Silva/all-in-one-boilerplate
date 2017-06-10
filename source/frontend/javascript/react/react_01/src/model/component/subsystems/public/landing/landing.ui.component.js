@@ -1,11 +1,11 @@
 /**
- * Landing page UI component.
+ * Landing UI component.
  */
 import React from 'react'
 
 import MainComponent from 'model/component/main/main.component'
 
-import './landing.component.css'
+import './landing.ui.component.css'
 
 /**
  *
@@ -16,8 +16,8 @@ export default class LandingUI extends MainComponent {
 	 *
 	 */
 	render() {
-		return <div className="landing">
-			<h1>All in One</h1>
+		return <div>
+			<h1>All in One - Landing</h1>
 		</div>
 	}
 }

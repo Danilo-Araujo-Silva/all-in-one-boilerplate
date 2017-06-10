@@ -1,5 +1,5 @@
 /**
- * Landing page container component.
+ * Landing container component.
  */
 import {connect} from 'react-redux'
 
