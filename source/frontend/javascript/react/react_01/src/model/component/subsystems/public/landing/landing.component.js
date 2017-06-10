@@ -1,20 +1,14 @@
 /**
- * Landing page component.
+ * Landing page container component.
  */
-import React from 'react'
-import MainComponent from 'model/component/main.component'
+import {connect} from 'react-redux'
 
-import './landing.component.css'
+import LandingUI from './landing.ui.component'
 
-/**
- * 
- */
-export class Landing extends MainComponent {
+const mapStateToProps = (state, props) => ({
+})
 
-	/**
-   * 
-   */
-  render() {
-    return <div></div>
-  }
-}
+const mapDispatchToProps = (disptach) => ({
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(LandingUI)
