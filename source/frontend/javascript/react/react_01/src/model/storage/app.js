@@ -18,8 +18,8 @@ if (typeof app === 'undefined') {
 
 	window.app = new App().asMutable()
 
-	window.app.set('session', sessionStorage)
-	window.app.set('local', localStorage)
+	window.app.set('session', window.sessionStorage)
+	window.app.set('local', window.localStorage)
 }
 
 export default window.app

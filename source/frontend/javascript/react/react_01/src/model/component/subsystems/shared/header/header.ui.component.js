@@ -3,14 +3,14 @@
  */
 import React from 'react'
 
-import MainComponent from 'model/component/main/main.component'
+import MainUI from 'model/component/main/main.ui.component'
 
 import './header.ui.component.css'
 
 /**
  *
  */
-export default class HeaderUI extends MainComponent {
+export default class HeaderUI extends MainUI {
 
 	/**
 	 *
