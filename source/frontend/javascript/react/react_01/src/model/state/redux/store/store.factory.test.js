@@ -1,6 +1,7 @@
 /**
  * Store factory test.
  */
-it('import without crash', () => {
+
+it('can be required without crashing', () => {
 	require('./store.factory')
 })

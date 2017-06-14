@@ -7,7 +7,7 @@ import ReactDOM from 'react-dom'
 import store from 'model/state/redux/store'
 import Main from './main.component'
 
-it('renders without crashing', () => {
+it('renders (using a store) without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(<Main store={store} />, div);
 })

@@ -1,6 +1,7 @@
 /**
  * Stack methods test.
  */
-it('import without crash', () => {
+
+it('can be required without crashing', () => {
 	require('./methods')
 })

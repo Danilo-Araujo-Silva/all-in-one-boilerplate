@@ -1,6 +1,7 @@
 /**
  * Dependencies test.
  */
-it('import without crashing', () => {
+
+it('can be required without crashing', () => {
 	require('./index')
 })

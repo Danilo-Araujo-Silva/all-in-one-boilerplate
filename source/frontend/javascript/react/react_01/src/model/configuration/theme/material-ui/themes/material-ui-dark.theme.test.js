@@ -1,6 +1,7 @@
 /**
- *
+ * Material UI Dark Theme test.
  */
-it('get exports without crashing', () => {
+
+it('it can get the exports without crashing', () => {
 	expect(require('./material-ui-dark.theme')).toBeTruthy()
 })

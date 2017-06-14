@@ -1,6 +1,7 @@
 /**
- * Material UI Light test.
+ * Material UI Light Theme test.
  */
-it('get exports without crashing', () => {
+
+it('it can get the exports without crashing', () => {
 	expect(require('./material-ui-light.theme')).toBeTruthy()
 })

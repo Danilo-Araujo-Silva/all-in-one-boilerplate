@@ -1,6 +1,7 @@
 /**
  * Store test.
  */
-it('import without crash', () => {
+
+it('can be required without crashing', () => {
 	require('./index')
 })

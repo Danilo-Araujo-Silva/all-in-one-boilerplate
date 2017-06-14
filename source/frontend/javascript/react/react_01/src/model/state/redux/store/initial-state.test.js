@@ -1,6 +1,7 @@
 /**
  * Initial state test.
  */
-it('import without crash', () => {
+
+it('can be required without crashing', () => {
 	require('./initial-state')
 })

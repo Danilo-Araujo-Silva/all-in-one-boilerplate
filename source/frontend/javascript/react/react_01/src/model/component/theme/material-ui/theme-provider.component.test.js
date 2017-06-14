@@ -9,7 +9,7 @@ import Main from 'model/component/main/main.component'
 import reduxStore from 'model/state/redux/store'
 import MaterialUIThemeProvider from './theme-provider.component'
 
-it('renders without crashing', () => {
+it('renders (using a store) without crashing', () => {
 	const div = document.createElement('div')
 
 	class Test extends Main {

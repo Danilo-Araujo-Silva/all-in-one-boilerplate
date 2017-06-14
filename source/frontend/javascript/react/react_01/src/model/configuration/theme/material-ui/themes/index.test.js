@@ -1,6 +1,7 @@
 /**
  * Themes test.
  */
-it('get exports without crashing', () => {
+
+it('can get the exports without crashing', () => {
 	expect(require('./index')).toBeTruthy()
 })

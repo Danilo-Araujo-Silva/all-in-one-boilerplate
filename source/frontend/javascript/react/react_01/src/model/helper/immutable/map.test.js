@@ -1,6 +1,7 @@
 /**
  * Immutable map helper test.
  */
-it('import without crash', () => {
+
+it('can be required without crashing', () => {
 	require('./map')
 })
