@@ -8,4 +8,4 @@ it('create a root element and require without crashing', () => {
 	document.body.appendChild(div)
 
 	require('./root.controller')
-});
+})

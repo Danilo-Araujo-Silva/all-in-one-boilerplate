@@ -15,4 +15,4 @@ it('can be inherited without crashing', () => {
 
 	const div = document.createElement('div')
 	ReactDOM.render(<Test />, div)
-});
+})

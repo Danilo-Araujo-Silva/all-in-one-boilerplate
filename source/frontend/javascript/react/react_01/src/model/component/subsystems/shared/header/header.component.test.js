@@ -10,4 +10,4 @@ import Header from './header.component'
 it('renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(<Header store={store} />, div);
-});
+})
