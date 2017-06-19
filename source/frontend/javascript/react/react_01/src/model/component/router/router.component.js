@@ -4,13 +4,13 @@
 import React from 'react';
 import {BrowserRouter, Route} from 'react-router-dom';
 
-import Main from 'model/component/main/main.component'
+import Base from 'model/component/base/base.component'
 import PublicLanding from 'model/component/subsystems/public/landing/landing.component';
 
 /**
  *
  */
-export default class Router extends Main {
+export default class Router extends Base {
 
 	/**
 	 *

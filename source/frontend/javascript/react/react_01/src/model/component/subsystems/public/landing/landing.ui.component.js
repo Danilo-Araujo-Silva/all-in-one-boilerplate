@@ -3,14 +3,14 @@
  */
 import React from 'react'
 
-import MainUI from 'model/component/main/main.ui.component'
+import BaseUI from 'model/component/base/base.ui.component'
 
 import './landing.ui.component.css'
 
 /**
  *
  */
-export default class LandingUI extends MainUI {
+export default class LandingUI extends BaseUI {
 
 	/**
 	 *

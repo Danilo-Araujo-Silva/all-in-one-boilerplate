@@ -3,14 +3,14 @@
  */
 import React from 'react'
 
-import MainUI from 'model/component/main/main.ui.component'
+import BaseUI from 'model/component/base/base.ui.component'
 
 import './footer.ui.component.css'
 
 /**
  *
  */
-export default class FooterUI extends MainUI {
+export default class FooterUI extends BaseUI {
 
 	/**
 	 *

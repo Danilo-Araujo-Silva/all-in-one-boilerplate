@@ -4,13 +4,13 @@
 import React from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-import Main from 'model/component/main/main.component'
+import Base from 'model/component/base/base.component'
 import theme from 'model/configuration/theme/material-ui/theme';
 
 /**
  *
  */
-export default class MaterialUIThemeProvider extends Main {
+export default class MaterialUIThemeProvider extends Base {
 
 	/**
 	 *

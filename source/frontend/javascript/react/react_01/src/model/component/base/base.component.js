@@ -1,5 +1,5 @@
 /**
- * Main component.
+ * Base component.
  * All components should extend this component.
  */
 import React from 'react'
@@ -7,7 +7,7 @@ import React from 'react'
 /**
  * 
  */
-export default class Main extends React.Component {
+export default class Base extends React.Component {
 
 	// /**
 	 // *
@@ -86,5 +86,5 @@ export default class Main extends React.Component {
 /**
  * 
  */
-//Main.defaultProps = {
+//Base.defaultProps = {
 //}

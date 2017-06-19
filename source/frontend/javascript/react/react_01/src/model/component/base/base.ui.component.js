@@ -1,15 +1,15 @@
 /**
- * Main UI component.
+ * Base UI component.
  * All UI components should extend this component.
  */
 import React from 'react'
 
-import Main from './main.component'
+import Base from './base.component'
 
 /**
  *
  */
-export default class MainUI extends Main {
+export default class BaseUI extends Base {
 
 	/**
 	 *
@@ -22,5 +22,5 @@ export default class MainUI extends Main {
 /**
  *
  */
-//MainUIComponent.defaultProps = {
+//BaseUIComponent.defaultProps = {
 //}
