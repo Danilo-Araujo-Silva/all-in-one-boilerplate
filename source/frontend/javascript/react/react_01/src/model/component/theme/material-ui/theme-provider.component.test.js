@@ -25,5 +25,5 @@ it('renders (using a store) without crashing', () => {
 			</MaterialUIThemeProvider>
 		</Provider>,
 		div
-	);
+	)
 })

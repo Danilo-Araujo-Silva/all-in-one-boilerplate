@@ -17,6 +17,9 @@ export default class FooterUI extends BaseUI {
 	 */
 	render() {
 		return <footer>
+			{this.props.beforeChildren}
+			{this.props.children}
+			{this.props.afterChildren}
 		</footer>
 	}
 }

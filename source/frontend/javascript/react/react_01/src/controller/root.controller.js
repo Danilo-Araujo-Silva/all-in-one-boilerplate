@@ -10,4 +10,4 @@ import Root from 'model/component/root/root.component'
 ReactDOM.render(
   <Root />,
   document.getElementById('root')
-);
+)

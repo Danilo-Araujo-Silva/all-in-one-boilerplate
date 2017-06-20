@@ -17,6 +17,9 @@ export default class HeaderUI extends BaseUI {
 	 */
 	render() {
 		return <header>
+			{this.props.beforeChildren}
+			{this.props.children}
+			{this.props.afterChildren}
 		</header>
 	}
 }

@@ -1,7 +1,7 @@
 /**
  * Root component of the application.
  */
-import React from 'react';
+import React from 'react'
 import {Provider} from 'react-redux'
 
 import 'model/configuration/dependencies'

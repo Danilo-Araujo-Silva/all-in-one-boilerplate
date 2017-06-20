@@ -1,8 +1,8 @@
 /**
  * Export the dark theme.
  */
-import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme'
 
-const materialUIDarkTheme = darkBaseTheme;
+const materialUIDarkTheme = darkBaseTheme
 
-export default materialUIDarkTheme;
+export default materialUIDarkTheme

@@ -1,18 +1,18 @@
 if (typeof app === 'undefined') {
-	let instance = null;
+	let instance = null
 
 	const Map = require('immutable').Map
 
 	class App extends Map {
 
 		constructor() {
-			super();
+			super()
 
 			if(!instance) {
-				instance = this;
+				instance = this
 			}
 
-			return instance;
+			return instance
 		}
 	}
 
