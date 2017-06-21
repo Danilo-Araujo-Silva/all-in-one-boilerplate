@@ -22,7 +22,7 @@ export default class PageUI extends BaseUI {
 	 */
 	render() {
 		return <Page
-			title={this.props.title}
+			documentTitle={this.props.documentTitle}
 			helmet={this.props.helmet}
 			header={
 				<Header
@@ -32,6 +32,7 @@ export default class PageUI extends BaseUI {
 			main={
 				<Main
 					title={this.props.title}
+					breadcrumb={this.props.breadcrumb}
 					{...this.props.main}
 				>
 					{this.props.children}

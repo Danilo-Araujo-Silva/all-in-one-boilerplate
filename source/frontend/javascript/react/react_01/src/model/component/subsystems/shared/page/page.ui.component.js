@@ -18,11 +18,12 @@ export default class PageUI extends BaseUI {
 
 	/**
 	 *
+	 * @returns {XML}
 	 */
 	render() {
 		return <div>
 			<Helmet
-				title={this.props.title}
+				documentTitle={this.props.documentTitle || this.props.title}
 				{...this.props.helmet}
 			/>
 			{this.props.beforeHeader}
@@ -41,7 +42,7 @@ export default class PageUI extends BaseUI {
 
 /**
  *
- * @type {{header: XML, main: XML, footer: XML}}
+ * @type {{header: XML, footer: XML}}
  */
 PageUI.defaultProps = {
 	header: <Header />,

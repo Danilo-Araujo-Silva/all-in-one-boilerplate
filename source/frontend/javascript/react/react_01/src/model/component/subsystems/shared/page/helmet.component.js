@@ -5,6 +5,8 @@ import React from 'react'
 import BaseHelmet from 'react-helmet'
 
 import Base from 'model/component/base/base.component'
+import {get} from 'model/helper/immutable/map'
+import properties from 'model/configuration/properties'
 
 /**
  *
@@ -17,10 +19,10 @@ export default class Helmet extends Base {
 	 */
 	render() {
 		return <BaseHelmet
-			defaultTitle='All in One'
-			titleTemplate='All in One - %s'
+			defaultTitle={get(properties, 'application.title')}
+			titleTemplate={`${get(properties, 'application.title')} - %s`}
 		>
-			<title>{this.props.title}</title>
+			<title>{this.props.documentTitle}</title>
 		</BaseHelmet>
 	}
 }

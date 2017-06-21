@@ -15,12 +15,11 @@ export default class LandingUI extends BaseUI {
 
 	/**
 	 *
+	 * @returns {XML}
 	 */
 	render() {
 		return <Page
-			title="Landing"
 		>
-			<p>Test</p>
 		</Page>
 	}
 }
