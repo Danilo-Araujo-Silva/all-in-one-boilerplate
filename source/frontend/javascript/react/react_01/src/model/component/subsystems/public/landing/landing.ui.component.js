@@ -19,7 +19,9 @@ export default class LandingUI extends BaseUI {
 	 */
 	render() {
 		return <Page
+			title="Landing"
 		>
+
 		</Page>
 	}
 }
