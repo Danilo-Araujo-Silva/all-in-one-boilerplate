@@ -4,7 +4,7 @@
 
 // Styles
 require('normalize.css/normalize.css')
-require('./../../../../public/css/main.css')
+require('./../../../view/public/css/main.css')
 
 // Material UI Framework dependencies
 const injectTapEventPlugin = require('react-tap-event-plugin')
