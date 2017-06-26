@@ -22,28 +22,17 @@ export default class PageUI extends BaseUI {
 	 */
 	render() {
 		return <Page
-			documentTitle={this.props.documentTitle}
-			helmet={this.props.helmet}
-			header={
-				<Header
-					{...this.props.header}
-				/>
-			}
-			main={
-				<Main
-					title={this.props.title}
-					breadcrumb={this.props.breadcrumb}
-					{...this.props.main}
-				>
-					{this.props.children}
-				</Main>
-			}
-			footer={
-				<Footer
-					{...this.props.footer}
-				/>
-			}
-			{...this.props.page}
+			{...this.props}
 		/>
 	}
+}
+
+/**
+ *
+ * @type {{headerComponent: *, mainComponent: *, footerComponent: *}}
+ */
+PageUI.defaultProps = {
+	headerComponent: Header,
+	mainComponent: Main,
+	footerComponent: Footer,
 }

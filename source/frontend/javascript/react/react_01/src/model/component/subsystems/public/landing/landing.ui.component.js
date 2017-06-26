@@ -21,7 +21,6 @@ export default class LandingUI extends BaseUI {
 		return <Page
 			title="Landing"
 		>
-
 		</Page>
 	}
 }

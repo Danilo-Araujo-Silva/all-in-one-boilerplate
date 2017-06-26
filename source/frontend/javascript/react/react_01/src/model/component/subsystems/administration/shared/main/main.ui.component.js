@@ -25,8 +25,9 @@ export default class MainUI extends BaseUI {
 		return <Main
 			{...this.props.parent}
 		>
-			{this.props.beforeChildren}
+			{this.props.beforeTitle}
 			{title}
+			{this.props.beforeChildren}
 			{this.props.children}
 			{this.props.afterChildren}
 		</Main>

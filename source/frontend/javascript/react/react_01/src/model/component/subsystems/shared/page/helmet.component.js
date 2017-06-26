@@ -20,7 +20,11 @@ export default class Helmet extends Base {
 	render() {
 		return <BaseHelmet
 			defaultTitle={get(properties, 'application.title')}
-			titleTemplate={`${get(properties, 'application.title')} - %s`}
+			titleTemplate={
+				this.props.overrideFullDocumentTitle
+					? '%s'
+					: `${get(properties, 'application.title')} - %s`
+			}
 		>
 			<title>{this.props.documentTitle}</title>
 		</BaseHelmet>

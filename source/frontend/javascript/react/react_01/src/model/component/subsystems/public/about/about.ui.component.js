@@ -18,9 +18,7 @@ export default class AboutUI extends BaseUI {
 	 * @returns {XML}
 	 */
 	render() {
-		return <Page
-			title="About"
-		>
+		return <Page>
 		</Page>
 	}
 }

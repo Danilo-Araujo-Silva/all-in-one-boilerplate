@@ -21,20 +21,41 @@ export default class PageUI extends BaseUI {
 	 * @returns {XML}
 	 */
 	render() {
+		const Helmet = this.props.helmetComponent
+		const Header = this.props.headerComponent
+		const Main = this.props.mainComponent
+		const Footer = this.props.footerComponent
+
 		return <div>
+			{this.props.beforeHelmet}
 			<Helmet
-				documentTitle={this.props.documentTitle || this.props.title}
-				{...this.props.helmet}
-			/>
+				documentTitle={
+					this.props.documentTitle
+					|| this.props.title
+				}
+				{...this.props.helmetProps}
+			>
+				{this.props.helmetChildren}
+			</Helmet>
 			{this.props.beforeHeader}
-			{this.props.header}
-			{this.props.betweenHeaderAndMain}
-			{
-				this.props.main
-				|| <Main>{this.props.children}</Main>
-			}
-			{this.props.betweenMainAndFooter}
-			{this.props.footer}
+			<Header
+				{...this.props.headerProps}
+			>
+				{this.props.headerChildren}
+			</Header>
+			{this.props.beforeMain}
+			<Main
+				{...this.props.mainProps}
+			>
+				{this.props.mainChildren}
+				{this.props.children}
+			</Main>
+			{this.props.beforeFooter}
+			<Footer
+				{...this.props.footerProps}
+			>
+				{this.props.footerChildren}
+			</Footer>
 			{this.props.afterFooter}
 		</div>
 	}
@@ -42,9 +63,11 @@ export default class PageUI extends BaseUI {
 
 /**
  *
- * @type {{header: XML, footer: XML}}
+ * @type {{helmetComponent: Helmet, headerComponent, mainComponent, footerComponent}}
  */
 PageUI.defaultProps = {
-	header: <Header />,
-	footer: <Footer />
+	helmetComponent: Helmet,
+	headerComponent: Header,
+	mainComponent: Main,
+	footerComponent: Footer,
 }
