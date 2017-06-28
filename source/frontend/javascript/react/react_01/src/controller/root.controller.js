@@ -5,7 +5,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import Root from 'model/component/root/root.component'
+import Root from 'model/component/root'
 
 ReactDOM.render(
   <Root />,
