@@ -19,7 +19,6 @@ export default class LandingStructure extends BaseStructure {
 		return <Page
 			{...this.props}
 		>
-			<h1>Landing</h1>
 		</Page>
 	}
 }
