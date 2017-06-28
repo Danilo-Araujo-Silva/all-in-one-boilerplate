@@ -1,4 +1,4 @@
-/**Public
+/**
  * Root component of the application.
  */
 import React from 'react'
