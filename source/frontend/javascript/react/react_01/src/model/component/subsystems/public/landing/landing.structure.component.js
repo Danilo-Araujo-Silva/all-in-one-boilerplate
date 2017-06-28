@@ -16,7 +16,10 @@ export default class LandingStructure extends BaseStructure {
 	 * @returns {XML}
 	 */
 	render() {
-		return <Page>
+		return <Page
+			{...this.props}
+		>
+			<h1>Landing</h1>
 		</Page>
 	}
 }

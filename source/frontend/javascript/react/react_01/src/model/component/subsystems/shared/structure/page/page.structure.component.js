@@ -24,7 +24,7 @@ export default class PageStructure extends BaseStructure {
 		const Main = this.props.mainComponent
 		const Footer = this.props.footerComponent
 
-		return <div>
+		return <div className={this.props.className}>
 			{this.props.beforeHelmet}
 			<Helmet
 				documentTitle={
