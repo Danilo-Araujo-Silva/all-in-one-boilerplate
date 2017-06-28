@@ -12,6 +12,7 @@ export default class MainStructure extends BaseStructure {
 
 	/**
 	 *
+	 * @returns {XML}
 	 */
 	render() {
 		return <main>

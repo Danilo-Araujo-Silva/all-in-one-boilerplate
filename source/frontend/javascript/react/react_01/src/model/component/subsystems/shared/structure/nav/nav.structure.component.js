@@ -12,6 +12,7 @@ export default class NavStructure extends BaseStructure {
 
 	/**
 	 *
+	 * @returns {XML}
 	 */
 	render() {
 		return <nav>

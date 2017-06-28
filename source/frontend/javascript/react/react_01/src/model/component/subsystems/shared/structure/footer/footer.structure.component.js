@@ -12,6 +12,7 @@ export default class FooterStructure extends BaseStructure {
 
 	/**
 	 *
+	 * @returns {XML}
 	 */
 	render() {
 		return <footer>

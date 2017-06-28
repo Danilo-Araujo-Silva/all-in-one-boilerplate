@@ -12,6 +12,7 @@ export default class HeaderStructure extends BaseStructure {
 
 	/**
 	 *
+	 * @returns {XML}
 	 */
 	render() {
 		return <header>
